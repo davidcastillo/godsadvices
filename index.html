@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="consejosdedios.ico">
+  <!-- Bootstrap core CSS -->
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="style.css" rel="stylesheet">
+  <title>Consejos de Dios</title>
+</head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113153123-2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-113153123-2');
+</script>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.0&appId=929533390583382&autoLogAppEvents=1';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<header>
+<div class="collapse bg-darky" id="navbarHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-md-7 py-4">
+        <h4 class="text-white">Que es esto?</h4>
+        <p class="text-white">La Biblia es un manual de vida, nos enseña como vivir contentos, felices, con salud y en paz, todo esta allí, listo para que lo leamos y lo pongamos en practica, esta herramienta busca traerte estos tips de vida cuando lo necesitas</p>
+      </div>
+      <div class="col-sm-4 offset-md-1 py-4">
+        <ul class="list-unstyled">
+          <li><a href="thanks.html" class="text-white">Agradecimientos</a></li>
+          <!-- <li><a href="#" class="text-white">Donaciones</a></li> -->
+          <li><a href="https://www.facebook.com/david.castillo.52056223" target="_blank" class="text-white">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-dark bg-darky box-shadow">
+  <div class="container d-flex justify-content-between">
+    <a href="#" class="navbar-brand d-flex align-items-center"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</div>
+</header>
+
+<main role="main">
+<section class="jumbotron text-center new">
+  <img src="consejosdedioslogo.jpeg" class="img-fluid" alt="Consejos de Dios">
+  <div class="container">
+    <p class="lead text-muted">Preguntale...</br> y <strong>El</strong> te responderá a traves de su palabra</p>
+    <div id="main" >
+     <div class="form-group">
+     <input type="text" class="form-control form-control-lg" id="field" placeholder="Escribe tu problema aqui">
+     </div>
+    </div>
+      <button onclick="getInputUser()" class="btn btn-lg btn-info my-2 text-white">Dame un consejo Dios</button>
+      <button onclick="createCard()" class="btn btn-lg btn-info my-2 text-white">Buscar por Preocupacion <a href="david"></a> </button>
+  </div>
+</section>
+
+<div class="container">
+  <div id="david" class="card-columns">
+  </div>
+</div>
+
+<div id="thanks" class="container">
+   <!-- <div id="thanks">
+
+  </div> -->
+</div>
+
+
+
+ <div id= "simpleModal" class="modal1">
+   <div class="modal-content1">
+     <div class="modal-header1">
+       <span class="closeBtn1">x</span>
+       <h2 id="titleModal"></h2>
+     </div>
+     <div class="modal-body1">
+     <p id="textVerse"></p>
+     </div>
+     <div class="modal-footer1">
+       <button class="btn btn-success btn-lg " style="margin-bottom:4px; word-wrap:break-word;" onclick="saveInfirebase(); openSecondModal(); closeModal()">Gracias Dios, Me siento mejor</button>
+       <button class="btn btn-success btn-lg " style="margin-bottom:4px; word-wrap:break-word;" onclick="newSearch()">Nueva busqueda</button>
+     </div>
+   </div>
+ </div>
+
+
+<div id= "secondModal" class="modal1">
+  <div class="modal-content1">
+    <div class="modal-header1">
+       <span id="closeSecondModal" class="closeBtn1">x</span>
+       <h2 class="text-center">Asi sea!!!</h2>
+    </div>
+    <div class="modal-body1">
+      <h4 class="text-center"><strong><span class="counter" id="clicksCounter" ></span></br>tambien han sido bendecidas con esta palabra del Dios</strong></h4>
+      <p class="text-center">Ayuda a otras personas a encontrar el consejo de Dios para sus problemas </p>
+    </div>
+    <div class="modal-footer1">
+      <div class="fb-share-button" data-href="https://consejosdedios.org/" data-layout="button"  data-mobile-iframe="true">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fconsejosdedios.org%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore btn btn-facebook">
+          <i class="fa fa-facebook"></i>
+          Compartir en facebook
+        </a>
+      </div>
+      <button class="btn btn-success btn-lg " style="margin-bottom:4px; word-wrap:break-word;" onclick="close2ndModal()">
+        No lo quiero compartir
+      </button>
+    </div>
+   </div>
+ </div>
+
+ <div id= "thirdModal" class="modal1">
+   <div class="modal-content1">
+     <div class="modal-header1 text-center">
+       <span id="closeThirdModal" class="closeBtn1">x</span>
+       <h2>Opps!</h2>
+     </div>
+     <div class="modal-body1 text-center">
+     <p>Lo sentimos,</br> Dios si tiene una respuesta para ti, </br>pero este sistema no es tan perfecto como El, </br>por favor intenta con una palabra similar</p>
+     </div>
+     <div class="modal-footer1">
+       <button class="btn btn-success btn-lg " style="margin-bottom:4px; word-wrap:break-word;" onclick="closethirdModal()">ok</button>
+    </div>
+   </div>
+ </div>
+ </main>
+
+
+
+ <footer class="text-muted">
+   <div class="container">
+     <p class="text-center">&copy; Inspired by God, Created by David Castillo, <a href="http://davidcastillo.co/">www.davidcastillo.co</a> . 2018</p>
+     <p class="float-right">
+       <a href="#">Back to top</a>
+     </p>
+   </div>
+ </footer>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+<script src="main.js"></script>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.9.1.min.js" integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="  crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js"></script>
+</body>
+</html>
