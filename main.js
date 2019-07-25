@@ -264,6 +264,7 @@ function addTitleToCard(title){
 function getPassage(buttonClicked){
   var xhr = new XMLHttpRequest();
   xhr.withCredentials = true;
+  //xhr.setRequestHeader("Access-Control-Allow-Origin", *);
   let passage = buttonClicked.id;
   const url = 'https://api.biblia.com/v1/bible/content/RVR60.txt.txt?passage='+ passage +'&style=fullyFormatted%NoFootnotes&&key=d3d4175e8b69d4a9ccb9620a86ce245b';
   xhr.onload = function(){
@@ -272,6 +273,7 @@ function getPassage(buttonClicked){
      };
   };
   xhr.open('GET', url);
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   xhr.send();
   };
 
